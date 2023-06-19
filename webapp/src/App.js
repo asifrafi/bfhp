@@ -32,32 +32,50 @@ const InputForm = () => {
     e.preventDefault();
 
     try {
-      /*
+
       // Make an API call to send the recipeName and servingSize to your backend
-      const response = await axios.post('/api/joybanglaekhaneapiboshabi/result0ba1dibe', { servingSize, dairyProduct });
+      const response = await axios.post('/api/joybanglaekhaneapiboshabi/result0ba1dibe', {
+        servingSize,
+        dairyProduct,
+        salt,
+        potato,
+        vegetables,
+        sugar,
+        chicken,
+        oil,
+        beef,
+        fruits,
+        egg,
+        mutton,
+        rice,
+        carbs,
+        fish,
+        driedFish
+      });
       const { data } = response;
-       
+
       // Update the result state with the response from the backend
       setResult(data.result);
-      */
-      console.log(recipeName);
-      console.log(servingSize);
-      console.log(dairyProduct);
-      console.log(salt);
-      console.log(potato);
-      console.log(vegetables);
-      console.log(sugar);
-      console.log(chicken);
-      console.log(oil);
-      console.log(beef);
-      console.log(fruits);
-      console.log(egg);
-      console.log(mutton);
-      console.log(rice);
-      console.log(carbs);
-      console.log(fish);
-      console.log(driedFish);
 
+      /*
+       console.log(recipeName);
+       console.log(servingSize);
+       console.log(dairyProduct);
+       console.log(salt);
+       console.log(potato);
+       console.log(vegetables);
+       console.log(sugar);
+       console.log(chicken);
+       console.log(oil);
+       console.log(beef);
+       console.log(fruits);
+       console.log(egg);
+       console.log(mutton);
+       console.log(rice);
+       console.log(carbs);
+       console.log(fish);
+       console.log(driedFish);
+   */
 
     } catch (error) {
       console.error(error);
