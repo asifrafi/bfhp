@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Form, Input, Button, Container, Card, Checkbox, Menu } from 'semantic-ui-react';
 import './index.css';
+import './pf.css';
 
 const InputForm = () => {
   const [recipeName, setRecipeName] = useState('');
