@@ -1,139 +1,227 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Form, Input, Button, Container, Card, Checkbox,Menu } from 'semantic-ui-react';
+import { Form, Input, Button, Container, Card, Checkbox, Menu } from 'semantic-ui-react';
 import './index.css';
-const PriceRangeForm = () => {
-  const [lowerPrice, setLowerPrice] = useState('');
-  const [upperPrice, setUpperPrice] = useState('');
-  const [isGaming, setIsGaming] = useState(false);
-  const [isMacBook, setIsMacBook] = useState(false);
-  const [laptops, setLaptops] = useState([]);
+
+const InputForm = () => {
+  const [recipeName, setRecipeName] = useState('');
+  const [servingSize, setServingSize] = useState('');
+  const [result, setResult] = useState('');
+  const [showContent, setShowContent] = useState(false);
+  const [dairyProduct, setDairyProduct] = useState(0);
+  const [salt, setSalt] = useState(0);
+  const [potato, setPotato] = useState(0);
+  const [vegetables, setVegetables] = useState(0);
+  const [sugar, setSugar] = useState(0);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      let apiUrl = `http://127.0.0.1:8000/laptopinrange/${lowerPrice}/${upperPrice}/`;
-      //let apiUrl = `http://localhost:5000/laptopinrange/${lowerPrice}/${upperPrice}/`;
-
-      if (isGaming) {
-       apiUrl = `http://127.0.0.1:8000/gaminglaptop/${lowerPrice}/${upperPrice}/`;
-       // apiUrl = `http://localhost:5000/gaminglaptop/${lowerPrice}/${upperPrice}/`;
-
-      }
-      
-      if (isMacBook) {
-       apiUrl = `http://127.0.0.1:8000/mac/${lowerPrice}/${upperPrice}/`;
-        //apiUrl = `http://localhost:5000/mac/${lowerPrice}/${upperPrice}/`;
-      }
-      if (isGaming && isMacBook) {
-        setLaptops([{ id: -1, name: "MacBooks Are Not Meant For Gaming!!", price: "যা নেই তার আবার কিসের দাম" }]);
-        return;
-      }
-      const response = await axios.get(apiUrl);
-      setLaptops(response.data);
+      /*
+      // Make an API call to send the recipeName and servingSize to your backend
+      const response = await axios.post('/api/joybanglaekhaneapiboshabi/result0ba1dibe', { servingSize, dairyProduct });
+      const { data } = response;
+       
+      // Update the result state with the response from the backend
+      setResult(data.result);
+      */
+      console.log(recipeName);
+      console.log(servingSize);
+      console.log(dairyProduct);
+      console.log(salt);
+      console.log(potato);
+      console.log(vegetables);
+      console.log(sugar);
     } catch (error) {
       console.error(error);
     }
   };
 
+  const handleTryUsClick = () => {
+    setShowContent(true);
+  };
+
   return (
-    <div>
-      <div style={{ position: 'relative', marginBottom: '2rem' }}>
-        <Menu inverted color="black">
-          <Menu.Item header as="h1">
-            Laptop Kinbo
+    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+      <div style={{ flex: 1 }}>
+        <Menu inverted color='white' primary className="mnu">
+          <Menu.Item header as="h1" color='White'>
+            <h1 color='white'>Bangladeshi Healthy Food Predictor</h1>
           </Menu.Item>
         </Menu>
         <Container>
-          <h1 style={{ fontFamily: 'Segoe UI', fontSize: '26px', textAlign: 'center', color: 'Black' }}>
-            Motivation
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <img src="https://i.postimg.cc/Jz8hsrkT/bdlogo.png" alt="Our logo" height="310" width="310" />
+          </div>
+          <h1 style={{ fontFamily: 'Segoe UI', fontSize: '26px', textAlign: 'center', color: '#470f02' }}>
+            About Us
           </h1>
-          <p style={{ fontFamily: 'Segoe UI', fontSize: '16px', textAlign: 'center' }}>
-            The main motivation behind building "Laptop Kinbo" is to address the issue of fraud in the laptop market in
-            Bangladesh. It is a common practice for dishonest shop owners to take advantage of customers who lack knowledge
-            about the market prices and features of laptops. These shop owners often sell subpar laptops at inflated prices,
-            leaving customers with no option but to make a bad purchase.
+          <p style={{ fontFamily: 'Segoe UI', fontSize: '16px', textAlign: 'justify', color: 'black' }}>
+            We are Minions, a group of four students from NSU (North South University). Our project, Bangladeshi Healthy Food Prediction Model, is part of our CSE445 course project. We are passionate about promoting health and well-being through proper nutrition.
+
+            For our project, we created a dataset completely from scratch. We collected Bangladeshi recipes from restaurants, home cooks, and blogs. To ensure the accuracy of our features, we surveyed 50 students from NSU, many of whom are from the pharmacy department. Additionally, we consulted with doctors to validate our findings.
+
+            Our goal is to provide a reliable tool that can predict the healthiness of a recipe. We understand that not all ingredients are equally important for health, so we focus on the key ingredients that matter the most. To achieve accurate predictions, we utilized ensemble learning models.
+
+            Thank you for using our Bangladeshi Healthy Food Predictor. We hope it helps you make informed decisions about your diet and leads you towards a healthier lifestyle.
           </p>
-          <h1 style={{ fontFamily: 'Segoe UI', fontSize: '26px', textAlign: 'center', color: 'Black' }}>
-            API
-          </h1>
-          <p style={{ fontFamily: 'Segoe UI', fontSize: '16px', textAlign: 'center' }}>At Laptop Kinbo, we take pride in our commitment to transparency and innovation. Unlike any other platform in the market, we have opened up our backend API, allowing developers and enthusiasts to access our vast database of laptops and build their own applications. With our API, you can integrate real-time laptop data directly into your projects, creating stunning and personalized experiences. Whether you're a developer looking to enhance an existing app or an aspiring entrepreneur with a vision for the future, our API provides the foundation for endless possibilities. Explore our API documentation and discover the potential at <b>https://WecantAffordHosting.com/laptop/kinbo/api/ </b>. Unleash your creativity and redefine the way people interact with laptops in the digital era.
-          </p>
-          <Form onSubmit={handleSubmit}>
-            <Form.Field>
-              <label>Lower Price</label>
-              <Input
-                type="number"
-                value={lowerPrice}
-                onChange={(e) => setLowerPrice(e.target.value)}
-                placeholder="Enter the least ammount of money you want to pay for a Laptop"
-                className="ta"
-              />
-            </Form.Field>
-            <Form.Field>
-              <label>Upper Price</label>
-              <Input
-                type="number"
-                value={upperPrice}
-                onChange={(e) => setUpperPrice(e.target.value)}
-                placeholder="Enter the most ammount of money you want to pay for a Laptop"
-                className="ta"
-              />
-            </Form.Field>
-            <Form.Field>
-              <Checkbox
-                label="Gaming"
-                checked={isGaming}
-                onChange={() => setIsGaming(!isGaming)}
-                className="cb"
-              />
-             <Form.Field>
-            <Checkbox
-              label="MacBook"
-              checked={isMacBook}
-              onChange={() => setIsMacBook(!isMacBook)}
-              className="cb"
-            />
-          </Form.Field>
-            </Form.Field>
-            <Button type="submit" color="black" primary className="black-button">
-              Search
-            </Button>
-          </Form>
+          {/* Try Us button */}
+          {!showContent && (
+            <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+              <Button onClick={handleTryUsClick} inverted color="white" primary className="blue-button">
+                Try Us
+              </Button>
+            </div>
+          )}
+          {/* Rest of the content */}
+          {showContent && (
+            <>
+              <div>
+
+                <h4 style={{ fontFamily: 'Segoe UI', fontSize: '20px', textAlign: 'center', color: '#470f02' }}>
+                  Read This Before Giving Us the Data
+                </h4>
+                <p style={{ fontFamily: 'Segoe UI', fontSize: '16px', textAlign: 'justify', color: 'black' }}>We kindly request you to read the following instructions carefully before entering your recipe data. Our prediction model takes into account various factors to determine the healthiness of a recipe. To ensure accurate results, please adhere to the following guidelines:
+
+
+                  <ul>
+                    <li>Name: Enter the name of your recipe.</li>
+                    <li>Servings: Specify the number of servings the recipe yields.</li>
+                    <li>Dairy Product: If your recipe includes any dairy-related ingredients such as cheese, milk, ghee, clarified butter, or cream, please add them to this field.</li>
+                    <li>Carbs: Include ingredients like flour, corn starch, bread, etc. in this field.</li>
+                    <li>Salt, Potato, Vegetables, Sugar, Chicken, Oil, Beef, Fruits, Egg, Mutton, Rice, Carbs, Fish, Dried Fish: For each ingredient, enter the amount in grams. If an ingredient is absent in your recipe, leave that particular field empty </li>
+                  </ul>
+                  By providing accurate and detailed information, you help our prediction model make precise assessments of the healthiness of your recipe. Please don't hesitate to contact us if you have any questions or need further clarification.
+
+
+                  Thank you for your cooperation and for using our Bangladeshi Healthy Food Predictor. We appreciate your commitment to promoting a healthier lifestyle through informed dietary choices.
+                </p>
+              </div>
+              <Form onSubmit={handleSubmit}>
+                <Form.Field>
+                  <label>Recipe Name</label>
+                  <Input
+                    type="text"
+                    value={recipeName}
+                    onChange={(e) => setRecipeName(e.target.value)}
+                    placeholder="Enter the recipe name"
+                    className="ta"
+                  />
+                </Form.Field>
+                <Form.Field>
+                  <label>Serving Size</label>
+                  <Input
+                    type="number"
+                    value={servingSize}
+                    onChange={(e) => setServingSize(e.target.value)}
+                    placeholder="Enter the serving size"
+                    className="ta"
+                  />
+                </Form.Field>
+                <Form.Field>
+                  <label>Dairy Products</label>
+                  <Input
+                    type="number"
+                    //value={dairyProduct}
+                    onChange={(e) => setDairyProduct(e.target.value)}
+                    placeholder="Enter the amount of Dairy Products in Grams"
+                    className="ta"
+                  />
+                </Form.Field>
+                <Form.Field>
+                  <label>Salt</label>
+                  <Input
+                    type="number"
+                    //value={salt}
+                    onChange={(e) => setSalt(e.target.value)}
+                    placeholder="Enter the amount of Salt in Grams"
+                    className="ta"
+                  />
+                </Form.Field>
+                <Form.Field>
+                  <label>Potato</label>
+                  <Input
+                    type="number"
+                    // value={potato}
+                    onChange={(e) => setPotato(e.target.value)}
+                    placeholder="Enter the amount of Potato in Grams"
+                    className="ta"
+                  />
+                </Form.Field>
+                <Form.Field>
+                  <label>Vegetables</label>
+                  <Input
+                    type="number"
+                    // value={vegetables}
+                    onChange={(e) => setVegetables(e.target.value)}
+                    placeholder="Enter the amount of Vegetables in Grams"
+                    className="ta"
+                  />
+                </Form.Field>
+                <Form.Field>
+                  <label>Sugar</label>
+                  <Input
+                    type="number"
+                    // value={sugar}
+                    onChange={(e) => setSugar(e.target.value)}
+                    placeholder="Enter the amount of Sugar in Grams"
+                    className="ta"
+                  />
+                </Form.Field>
+
+                <Button type="submit" color="black" primary className="black-button">
+                  Search
+                </Button>
+              </Form>
+
+              <Container>
+                <h2 style={{ textAlign: 'center' }}>Our Prediction</h2>
+                <div style={{ position: 'relative' }}>
+                  {result === 1 && (
+                    <Card.Group itemsPerRow={4} centered>
+                      <Card color="green">
+                        <Card.Content>
+                          <Card.Header>{recipeName} is Healthy</Card.Header>
+                        </Card.Content>
+                      </Card>
+                    </Card.Group>
+                  )}
+                  {result === 0 && (
+                    <Card.Group itemsPerRow={4} centered>
+                      <Card color="red">
+                        <Card.Content>
+                          <Card.Header>{recipeName} is Unhealthy</Card.Header>
+                        </Card.Content>
+                      </Card>
+                    </Card.Group>
+                  )}
+                  {/*result === '' && (
+                    <Card.Group itemsPerRow={4} centered>
+                      <Card color="grey">
+                        <Card.Content>
+                          <Card.Header>Please Give The Data First</Card.Header>
+                        </Card.Content>
+                      </Card>
+                    </Card.Group>
+                  )*/}
+                </div>
+              </Container>
+            </>
+          )}
         </Container>
       </div>
 
-      <Container>
-        <h2 style={{ textAlign: 'center' }}>LaptopKinbo Suggests You To Buy</h2>
-
-        <div style={{ position: 'relative' }}>
-          {laptops.length === 0 ? (
-            <p style={{ textAlign: 'center', fontFamily: 'Segoe' }}>Unfortunately, we could not find any suitable laptop for you.</p>
-          ) : (
-            <Card.Group itemsPerRow={4} centered>
-              {laptops.map((laptop) => (
-                <Card key={laptop.id}>
-                  <Card.Content>
-                    <Card.Header>{laptop.name}</Card.Header>
-                    <Card.Description>Price: {laptop.price}</Card.Description>
-                  </Card.Content>
-                </Card>
-              ))}
-            </Card.Group>
-          )}
-        </div>
-        <footer style={{ backgroundColor: 'black', color: 'white', padding: '10px', marginTop: '20px' }}>
-          <p style={{ textAlign: 'center' }}>
-            This page is powered by Laptop Kinbo API. If you would like to build your own app using our API, please visitaoi WhitePage for more information.
-          </p>
-          <p style={{ textAlign: 'center' }}>
-            API Documentation: Coming Soon
-          </p>
-        </footer>
-      </Container>
+      <footer style={{ backgroundColor: '#470f02', color: 'white', padding: '10px', marginTop: 'auto' }}>
+        <p style={{ textAlign: 'center' }}>
+          This WebApp was Created By Minions
+        </p>
+        <p style={{ textAlign: 'center' }}>
+          Documentation: Coming Soon
+        </p>
+      </footer>
     </div>
   );
 };
 
-export default PriceRangeForm;
+export default InputForm;

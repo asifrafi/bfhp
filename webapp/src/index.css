@@ -13,16 +13,27 @@ code {
     monospace;
 }
 .ui.teal.menu {
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(206, 16, 16);
   color: rgb(255, 255, 255);
 }
 
 /* Use a custom font for the Navbar */
-.ui.teal.menu .header {
+.lala {
   font-family: 'Segoe', sans-serif;
+  color: #470f02;
 }
 .black-button {
-  background-color: black !important;
+  background-color: #470f02 !important;
+  color: white !important;
+}
+
+.mnu {
+  background-color: #470f02 !important;
+  color: white 
+}
+.blue-button{
+  
+  background-color: #470f02 !important;
   color: white !important;
 }
 .ta {
