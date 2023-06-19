@@ -58,8 +58,7 @@ const InputForm = () => {
       // Update the result state with the response from the backend
       setResult(data.result);
      
-    
-
+      
       /*
        console.log(recipeName);
        console.log(servingSize);
