@@ -32,7 +32,7 @@ const InputForm = () => {
     e.preventDefault();
 
     try {
-
+      /*
       // Make an API call to send the recipeName and servingSize to your backend
       const response = await axios.post('/api/joybanglaekhaneapiboshabi/result0ba1dibe', {
         servingSize,
@@ -56,6 +56,8 @@ const InputForm = () => {
 
       // Update the result state with the response from the backend
       setResult(data.result);
+      */
+     setResult(1);
 
       /*
        console.log(recipeName);
@@ -357,7 +359,7 @@ const InputForm = () => {
         </Container>
       </div>
 
-      <footer style={{ backgroundColor: '#470f02', color: 'white', padding: '10px', marginTop: 'auto' }}>
+      <footer style={{ backgroundColor: '#470f02', color: 'white', padding: '10px', marginTop: '50px' }}>
         <p style={{ textAlign: 'center' }}>
           This WebApp was Created By Minions
         </p>
