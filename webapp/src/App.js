@@ -13,6 +13,20 @@ const InputForm = () => {
   const [potato, setPotato] = useState(0);
   const [vegetables, setVegetables] = useState(0);
   const [sugar, setSugar] = useState(0);
+  const [chicken, setChicken] = useState(0);
+  const [oil, setOil] = useState(0);
+  const [beef, setBeef] = useState(0);
+  const [fruits, setFruits] = useState(0);
+  const [egg, setEgg] = useState(0);
+  const [mutton, setMutton] = useState(0);
+  const [rice, setRice] = useState(0);
+  const [carbs, setCarbs] = useState(0);
+  const [fish, setFish] = useState(0);
+  const [driedFish, setDriedFish] = useState(0);
+
+
+
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -33,6 +47,18 @@ const InputForm = () => {
       console.log(potato);
       console.log(vegetables);
       console.log(sugar);
+      console.log(chicken);
+      console.log(oil);
+      console.log(beef);
+      console.log(fruits);
+      console.log(egg);
+      console.log(mutton);
+      console.log(rice);
+      console.log(carbs);
+      console.log(fish);
+      console.log(driedFish);
+
+
     } catch (error) {
       console.error(error);
     }
@@ -123,7 +149,7 @@ const InputForm = () => {
                   <label>Dairy Products</label>
                   <Input
                     type="number"
-                    //value={dairyProduct}
+                    value={dairyProduct}
                     onChange={(e) => setDairyProduct(e.target.value)}
                     placeholder="Enter the amount of Dairy Products in Grams"
                     className="ta"
@@ -133,7 +159,7 @@ const InputForm = () => {
                   <label>Salt</label>
                   <Input
                     type="number"
-                    //value={salt}
+                    value={salt}
                     onChange={(e) => setSalt(e.target.value)}
                     placeholder="Enter the amount of Salt in Grams"
                     className="ta"
@@ -143,7 +169,7 @@ const InputForm = () => {
                   <label>Potato</label>
                   <Input
                     type="number"
-                    // value={potato}
+                    value={potato}
                     onChange={(e) => setPotato(e.target.value)}
                     placeholder="Enter the amount of Potato in Grams"
                     className="ta"
@@ -153,7 +179,7 @@ const InputForm = () => {
                   <label>Vegetables</label>
                   <Input
                     type="number"
-                    // value={vegetables}
+                    value={vegetables}
                     onChange={(e) => setVegetables(e.target.value)}
                     placeholder="Enter the amount of Vegetables in Grams"
                     className="ta"
@@ -163,18 +189,119 @@ const InputForm = () => {
                   <label>Sugar</label>
                   <Input
                     type="number"
-                    // value={sugar}
+                    value={sugar}
                     onChange={(e) => setSugar(e.target.value)}
                     placeholder="Enter the amount of Sugar in Grams"
                     className="ta"
                   />
                 </Form.Field>
+                <Form.Field>
+                  <label>Chicken</label>
+                  <Input
+                    type="number"
+                    value={chicken}
+                    onChange={(e) => setChicken(e.target.value)}
+                    placeholder="Enter the amount of Chicken in Grams"
+                    className="ta"
+                  />
+                </Form.Field>
+                <Form.Field>
+                  <label>Oil</label>
+                  <Input
+                    type="number"
+                    value={oil}
+                    onChange={(e) => setOil(e.target.value)}
+                    placeholder="Enter the amount of Oil in Grams"
+                    className="ta"
+                  />
+                </Form.Field>
+                <Form.Field>
+                  <label>Beef</label>
+                  <Input
+                    type="number"
+                    value={beef}
+                    onChange={(e) => setBeef(e.target.value)}
+                    placeholder="Enter the amount of Beef in Grams"
+                    className="ta"
+                  />
+                </Form.Field>
+                <Form.Field>
+                  <label>Fruits</label>
+                  <Input
+                    type="number"
+                    value={fruits}
+                    onChange={(e) => setFruits(e.target.value)}
+                    placeholder="Enter the amount of Fruits in Grams"
+                    className="ta"
+                  />
+                </Form.Field>
+                <Form.Field>
+                  <label>Egg</label>
+                  <Input
+                    type="number"
+                    value={egg}
+                    onChange={(e) => setEgg(e.target.value)}
+                    placeholder="Enter the amount of Egg in pieces"
+                    className="ta"
+                  />
+                </Form.Field>
+
+                <Form.Field>
+                  <label>Mutton</label>
+                  <Input
+                    type="number"
+                    value={mutton}
+                    onChange={(e) => setMutton(e.target.value)}
+                    placeholder="Enter the amount of Mutton in Grams"
+                    className="ta"
+                  />
+                </Form.Field>
+                <Form.Field>
+                  <label>Rice</label>
+                  <Input
+                    type="number"
+                    value={rice}
+                    onChange={(e) => setRice(e.target.value)}
+                    placeholder="Enter the amount of Rice in Grams"
+                    className="ta"
+                  />
+                </Form.Field>
+                <Form.Field>
+                  <label>Carbs</label>
+                  <Input
+                    type="number"
+                    value={carbs}
+                    onChange={(e) => setCarbs(e.target.value)}
+                    placeholder="Enter the amount of Carbs in Grams"
+                    className="ta"
+                  />
+                </Form.Field>
+                <Form.Field>
+                  <label>Fish</label>
+                  <Input
+                    type="number"
+                    value={fish}
+                    onChange={(e) => setFish(e.target.value)}
+                    placeholder="Enter the amount of Fish in Grams"
+                    className="ta"
+                  />
+                </Form.Field>
+                <Form.Field>
+                  <label>Dried Fish</label>
+                  <Input
+                    type="number"
+                    value={driedFish}
+                    onChange={(e) => setDriedFish(e.target.value)}
+                    placeholder="Enter the amount of Dried Fish in Grams"
+                    className="ta"
+                  />
+                </Form.Field>
+
 
                 <Button type="submit" color="black" primary className="black-button">
                   Search
                 </Button>
               </Form>
-
               <Container>
                 <h2 style={{ textAlign: 'center' }}>Our Prediction</h2>
                 <div style={{ position: 'relative' }}>
