@@ -32,7 +32,7 @@ const InputForm = () => {
     e.preventDefault();
 
     try {
-      /*
+    
       // Make an API call to send the recipeName and servingSize to your backend
       const response = await axios.post('/api/joybanglaekhaneapiboshabi/result0ba1dibe', {
         servingSize,
@@ -56,8 +56,8 @@ const InputForm = () => {
 
       // Update the result state with the response from the backend
       setResult(data.result);
-      */
-     setResult(1);
+     
+    
 
       /*
        console.log(recipeName);
@@ -329,7 +329,7 @@ const InputForm = () => {
                     <Card.Group itemsPerRow={4} centered>
                       <Card color="green">
                         <Card.Content>
-                          <Card.Header>{recipeName} is Healthy</Card.Header>
+                          <Card.Header centered>{recipeName} is Healthy</Card.Header>
                         </Card.Content>
                       </Card>
                     </Card.Group>
@@ -338,7 +338,7 @@ const InputForm = () => {
                     <Card.Group itemsPerRow={4} centered>
                       <Card color="red">
                         <Card.Content>
-                          <Card.Header>{recipeName} is Unhealthy</Card.Header>
+                          <Card.Header centered>{recipeName} is Unhealthy</Card.Header>
                         </Card.Content>
                       </Card>
                     </Card.Group>
