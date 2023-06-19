@@ -1,0 +1,49 @@
+.price-range-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .form-group {
+    margin-bottom: 10px;
+  }
+  
+  .label {
+    font-weight: bold;
+  }
+  
+  input[type="number"] {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  .btn-search {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    background-color: #4287f5;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .heading {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .laptop-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .laptop-card {
+    padding: 10px;
+   
+  }  

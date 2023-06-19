@@ -5,9 +5,33 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(248, 141, 0);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.ui.teal.menu {
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+}
+
+/* Use a custom font for the Navbar */
+.ui.teal.menu .header {
+  font-family: 'Segoe', sans-serif;
+}
+.black-button {
+  background-color: black !important;
+  color: white !important;
+}
+.ta {
+  border: 2px solid #333;
+  background-color: white;
+  border-radius: 0.25rem;
+}
+.cb {
+
+ font-weight: bold;
+ font-size: 16px;
 }
