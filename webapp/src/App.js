@@ -35,7 +35,7 @@ const InputForm = () => {
     try {
     
       // Make an API call to send the recipeName and servingSize to your backend
-      const response = await axios.post('/api/joybanglaekhaneapiboshabi/result0ba1dibe', {
+      const response = await axios.post('http://127.0.0.1:5000/predict/', {
         servingSize,
         dairyProduct,
         salt,
