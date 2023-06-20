@@ -1,6 +1,5 @@
-# bfhp
-Bangladeshi food health predictor
-
+# Bangladeshi food health predictor
+(bfph)
 
 ## Contributor
 
@@ -37,7 +36,10 @@ Thank you for your cooperation and for using our Bangladeshi Healthy Food Predic
 #### Tech Stack
 
 * Frontend: React (Next.js), Semantic UI React
-* Backend: Flask
+* Backend: Flask Api 
+
+#### MODEL
+* As pickle file
 
 [Install Node JS](https://nodejs.org/en/)
 
