@@ -4,10 +4,10 @@ Bangladeshi food health predictor
 
 ## Contributor
 
-Tanvir Yeasin Opy
-Simanta Mostafa
-Asif Haider
-Monirul Abdin Seum
+Tanvir Yeasin Opy  <br>
+Simanta Mostafa  <br>
+Asif Haider  <br>
+Monirul Abdin Seum  <br>
 
 #### About Us
 
@@ -36,16 +36,22 @@ Thank you for your cooperation and for using our Bangladeshi Healthy Food Predic
 
 #### Tech Stack
 
-Frontend: React (Next.js), Semantic UI React
-Backend: Flask
+* Frontend: React (Next.js), Semantic UI React
+* Backend: Flask
 
 [Install Node JS](https://nodejs.org/en/)
 
 [Install NPM](https://www.npmjs.com/)
 
-### Instruction for Backend Api :
+### Instruction for FrontEnd :
+* npm i
+* npm start
 
-###### py -3 -m venv .venv
-###### .venv\Scripts\activate
-###### pip install Flask
-###### python app.py
+
+### Instruction for BackEnd Api :
+
+* py -3 -m venv .venv
+* .venv\Scripts\activate
+* pip install Flask
+* python app.py
+
