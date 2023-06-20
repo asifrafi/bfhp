@@ -136,7 +136,7 @@ const InputForm = () => {
                     <li>Servings: Specify the number of servings the recipe yields.</li>
                     <li>Dairy Product: If your recipe includes any dairy-related ingredients such as cheese, milk, ghee, clarified butter, or cream, please add them to this field.</li>
                     <li>Carbs: Include ingredients like flour, corn starch, bread, etc. in this field.</li>
-                    <li>Salt, Potato, Vegetables, Sugar, Chicken, Oil, Beef, Fruits, Egg, Mutton, Rice, Carbs, Fish, Dried Fish: For each ingredient, enter the amount in grams. If an ingredient is absent in your recipe, leave that particular field empty </li>
+                    <li>Salt, Potato, Vegetables, Sugar, Chicken, Oil, Beef, Fruits, Egg, Mutton, Rice, Carbs, Fish, Dried Fish: For each ingredient, enter the amount in grams except eggs.The number of eggs used are required to be entered. If an ingredient is absent in your recipe, leave that particular field empty </li>
                   </ul>
                   By providing accurate and detailed information, you help our prediction model make precise assessments of the healthiness of your recipe. Please don't hesitate to contact us if you have any questions or need further clarification.
 
