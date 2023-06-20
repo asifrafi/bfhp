@@ -319,7 +319,7 @@ const InputForm = () => {
 
 
                 <Button type="submit" color="black" primary className="black-button">
-                  Search
+                  Predict
                 </Button>
               </Form>
               <Container>
